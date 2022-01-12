@@ -1,9 +1,10 @@
 NOMER: 34
 MIX: 0
+FSIZE: 24 
 LINE1: КАЛИЕВ
-LINE2: DIHROMAT
+LINE2: ДИХРОМАТ
 LINE3: 
-SIGN1: 1
-SIGN2: 2
-SIGN3: 3
-SIGN4: 4
+SIGN1: acid
+SIGN2: acid
+SIGN3: acid
+SIGN4: acid

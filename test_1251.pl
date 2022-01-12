@@ -88,14 +88,27 @@ foreach my $file (@files)
 				my $sign2;
 				my $sign3;
 				my $sign4;
+				my $fsize = 16;
+				my $voffset = 3;
 
 				open (FILE, "<".$file);
 				while(<FILE>) {
 					print $_;
+          if (m/NOMER:\s+(.*)/) {
+            $number = $1;
+            print "namerihme nomer\n";
+          }
+
 					if (m/MIX:\s+(.*)/) {
 						$smes = $1;
 					  print "namerihme smes\n";
 					}
+
+          if (m/FSIZE:\s+(.*)/) {
+            $fsize = $1;
+            print "namerihme fsize\n";
+          }
+
 					if (m/LINE1:\s+(.*)/) {
 #            $line1 = $1;
 						$line1 = $conv->convert($1);
@@ -118,6 +131,10 @@ foreach my $file (@files)
 
 				}
 
+				if ($line3 eq "") {
+					$voffset = -2;
+				}
+
 				$p->newpage;
         $p->setlinewidth(0.1);
         $p->box(0, 0, 90, 60);
@@ -128,17 +145,29 @@ foreach my $file (@files)
 #        barcode(sprintf("%s", $file), 10.0, 0, 120.0);
 #        barcode(sprintf("%s", $checksum), 10.0, 0, 10.0);
 
-        $p->setfont("etn_____.pfb", 72);
+        $p->setfont("etn_____.pfb", 64);
         $p->setcolour("black");
-        $p->text({align=>'center'}, 15, 35, $number);
+				if ($smes ne "1" ) {
+					$p->setfont("etn_____.pfb", 64);
+	        $p->text({align=>'center'}, 15, 35+2, $number);
+				} else {
+					$p->setfont("etn_____.pfb", 32);
+					$p->text({align=>'center', rotate=>'45'}, 17, 42, "ялея");
+			  }
 
-        $p->setfont("etn_____.pfb", 24);
-				$p->text({align=>'left'}, 32, 48, $line1);
-				$p->text({align=>'left'}, 32, 40, $line2);
-				$p->text({align=>'left'}, 32, 32, $line3);
+		#	GHS-pictogram-acid.eps
+
+				if ($sign1 ne "") {
+  				$p->importepsfile( {overlap => 1}, "./eps2/GHS-pictogram-$sign1.eps", 5, 5, 20, 20);
+				}
+
+        $p->setfont("etn_____.pfb", $fsize);
+				$p->text({align=>'left'}, 32, 48+$voffset, $line1);
+				$p->text({align=>'left'}, 32, 40+$voffset, $line2);
+				$p->text({align=>'left'}, 32, 32+$voffset, $line3);
 				$p->line(3, 31, 87, 31);
-				$p->text({align=>'left'}, 2, 24, "NE PIPAI CHE SI E");
-				$p->text({align=>'left'}, 2, 16, "MAIKATA IBALO");
+#				$p->text({align=>'left'}, 2, 24, "ме охоюи ве ях е");
+#				$p->text({align=>'left'}, 2, 16, "люийюрю хаюкн");
 #        $p->text({align=>'right'}, 200, 34.5, "Box No: ".sprintf("%04d", $kashon++));
 #        $p->text({align=>'right'}, 115, 24.5, "End: ".sprintf("%s", $end));
 #        $p->setfont("arial_rounded_bold.ttf", 10);
