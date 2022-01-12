@@ -1,0 +1,10 @@
+NOMER: 35
+MIX: 0
+FSIZE: 24 
+LINE1: АСИНАЛЕН
+LINE2: ПЕНЕТРАТ
+LINE3: 
+SIGN1: acid
+SIGN2: bottle
+SIGN3: exclam
+SIGN4: explos
