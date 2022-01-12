@@ -177,19 +177,19 @@ foreach my $file (@files)
 #-rw-r--r-- 1 smooker smooker 12733 Jan 12 14:29 GHS-pictogram-skull.eps
 
 				if ($sign1 ne "") {
-  				$p->importepsfile( {overlap => 1}, "./eps2/GHS-pictogram-$sign1.eps", 3, 5, 23, 25);
+  				$p->importepsfile( {overlap => 1}, "./eps3/GHS-pictogram-$sign1.eps", 3, 5, 23, 25);
 				}
 
         if ($sign2 ne "") {
-          $p->importepsfile( {overlap => 1}, "./eps2/GHS-pictogram-$sign2.eps", 3+21, 5, 23+21, 25);
+          $p->importepsfile( {overlap => 1}, "./eps3/GHS-pictogram-$sign2.eps", 3+21, 5, 23+21, 25);
         }
 
         if ($sign3 ne "") {
-          $p->importepsfile( {overlap => 1}, "./eps2/GHS-pictogram-$sign3.eps", 3+42, 5, 23+42, 25);
+          $p->importepsfile( {overlap => 1}, "./eps3/GHS-pictogram-$sign3.eps", 3+42, 5, 23+42, 25);
         }
 
         if ($sign4 ne "") {
-          $p->importepsfile( {overlap => 1}, "./eps2/GHS-pictogram-$sign4.eps", 3+63, 5, 23+63, 25);
+          $p->importepsfile( {overlap => 1}, "./eps3/GHS-pictogram-$sign4.eps", 3+63, 5, 23+63, 25);
         }
 
         $p->setfont("etn_____.pfb", $fsize);
