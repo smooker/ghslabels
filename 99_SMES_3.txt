@@ -1,0 +1,10 @@
+NOMER: CM
+MIX: 1
+FSIZE: 15
+LINE1: 50% ЕТИЛОВ АЛКОХОЛ 
+LINE2: 51% ВОДА
+LINE3: ПЛЮС 15% РАКИЙЧИЦА
+SIGN1: apron
+SIGN2: face_shield
+SIGN3: gloves
+SIGN4: suit
