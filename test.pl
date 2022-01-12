@@ -128,7 +128,18 @@ foreach my $file (@files)
             $sign1 = $1;
             print "namerihme sign1\n";
           }
-
+          if (m/SIGN2:\s+(.*)/) {
+            $sign2 = $1;
+            print "namerihme sign2\n";
+          }
+          if (m/SIGN3:\s+(.*)/) {
+            $sign3 = $1;
+            print "namerihme sign3\n";
+          }
+          if (m/SIGN4:\s+(.*)/) {
+            $sign4 = $1;
+            print "namerihme sign4\n";
+          }
 				}
 
 				if ($line3 eq "") {
@@ -155,11 +166,31 @@ foreach my $file (@files)
 					$p->text({align=>'center', rotate=>'45'}, 17, 42, "СМЕС");
 			  }
 
-		#	GHS-pictogram-acid.eps
+#-rw-r--r-- 1 smooker smooker 16542 Jan 12 14:13 GHS-pictogram-acid.eps
+#-rw-r--r-- 1 smooker smooker  4286 Jan 12 14:19 GHS-pictogram-bottle.eps
+#-rw-r--r-- 1 smooker smooker  4560 Jan 12 14:19 GHS-pictogram-exclam.eps
+#-rw-r--r-- 1 smooker smooker 20318 Jan 12 14:27 GHS-pictogram-explos.eps
+#-rw-r--r-- 1 smooker smooker  4506 Jan 12 14:27 GHS-pictogram-flamme.eps
+#-rw-r--r-- 1 smooker smooker  7188 Jan 12 14:28 GHS-pictogram-pollu.eps
+#-rw-r--r-- 1 smooker smooker  5146 Jan 12 14:28 GHS-pictogram-rondflam.eps
+#-rw-r--r-- 1 smooker smooker 20874 Jan 12 14:29 GHS-pictogram-silhouette.eps
+#-rw-r--r-- 1 smooker smooker 12733 Jan 12 14:29 GHS-pictogram-skull.eps
 
 				if ($sign1 ne "") {
-  				$p->importepsfile( {overlap => 1}, "./eps2/GHS-pictogram-$sign1.eps", 5, 5, 20, 20);
+  				$p->importepsfile( {overlap => 1}, "./eps2/GHS-pictogram-$sign1.eps", 3, 5, 23, 25);
 				}
+
+        if ($sign2 ne "") {
+          $p->importepsfile( {overlap => 1}, "./eps2/GHS-pictogram-$sign2.eps", 3+21, 5, 23+21, 25);
+        }
+
+        if ($sign3 ne "") {
+          $p->importepsfile( {overlap => 1}, "./eps2/GHS-pictogram-$sign3.eps", 3+42, 5, 23+42, 25);
+        }
+
+        if ($sign4 ne "") {
+          $p->importepsfile( {overlap => 1}, "./eps2/GHS-pictogram-$sign4.eps", 3+63, 5, 23+63, 25);
+        }
 
         $p->setfont("etn_____.pfb", $fsize);
 				$p->text({align=>'left'}, 32, 48+$voffset, $line1);

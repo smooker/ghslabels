@@ -4,7 +4,7 @@ FSIZE: 15
 LINE1: 50% ЕТИЛОВ АЛКОХОЛ 
 LINE2: 51% ВОДА
 LINE3: ПЛЮС 13% РАКИЙЧИЦА
-SIGN1: acid
-SIGN2: 2
-SIGN3: 3
-SIGN4: 4
+SIGN1: flamme
+SIGN2: pollu
+SIGN3: rondflam
+SIGN4: silhouette

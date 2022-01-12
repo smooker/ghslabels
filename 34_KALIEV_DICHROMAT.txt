@@ -5,6 +5,6 @@ LINE1: КАЛИЕВ
 LINE2: ДИХРОМАТ
 LINE3: 
 SIGN1: acid
-SIGN2: acid
-SIGN3: acid
-SIGN4: acid
+SIGN2: bottle
+SIGN3: exclam
+SIGN4: explos
